@@ -8,8 +8,6 @@ __pycache__/
 
 .python-version
 
-env.py
-
 # Distribution / packaging
 .Python
 build/

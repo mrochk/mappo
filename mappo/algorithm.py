@@ -39,18 +39,18 @@ class Algorithm(nn.Module, abc.ABC):
             for agent in env.agents
         })
 
-    def learn(self, niters: int, nsteps: int = 2048, checkpoint_path: str = 'checkpoints_ippo',
-                eval_path: str = 'evaluations_ippo'):
+    def learn(self, niters: int, nsteps: int = 2048, checkpoints_path: str = 'checkpoints',
+                eval_path: str = 'evaluations'):
         '''Train the algorithm for `niters` iterations.
 
         Args:
-            niters (int): How many updates to perform on actors and critic.
+            niters (int): How many updates to perform.
             nsteps (int, optional): How many steps to collect before performing an update. Defaults to 2048.
-            checkpoint_path (str, optional): Path to save algorithm state. Defaults to 'checkpoints'.
+            checkpoints_path (str, optional): Path to save algorithm state. Defaults to 'checkpoints'.
         '''
 
         # create directory for checkpoints if not exists
-        try: os.mkdir(checkpoint_path)
+        try: os.mkdir(checkpoints_path)
         except: pass
 
         evaluations = {'mean_return': [], 'std_return': [], 'mean_eplen': []}
@@ -84,7 +84,7 @@ class Algorithm(nn.Module, abc.ABC):
                 print(log, flush=True)
 
             # save checkpoint
-            th.save(self.state_dict(), f'{checkpoint_path}/ippo{i+1}_{mean_return:.1f}_{std_return:.1f}.pth')
+            th.save(self.state_dict(), f'{checkpoints_path}/ippo{i+1}_{mean_return:.1f}_{std_return:.1f}.pth')
 
             # save logs
             np.save(eval_path, np.array(evaluations))
