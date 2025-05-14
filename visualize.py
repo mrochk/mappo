@@ -1,19 +1,20 @@
 import numpy as np
 import torch as th
+import sys
 
 from env import create_environment 
-
-from itertools import count
-from mappo import MAPPO
-
-import sys
+from mappo import MAPPO, IPPO
 
 assert len(sys.argv) > 1
 
 env = create_environment(2, 2500, render_mode='human')
-algo = MAPPO(env)
-algo.load_state_dict(th.load(sys.argv[1]))
-algo.eval()
+filename = sys.argv[1]
+
+if 'ippo' in filename: algo = IPPO(env)
+else: algo = MAPPO(env)
+
+algo.load_state_dict(th.load(filename))
+algo = algo.eval()
 
 rewards = []
 env.reset()

@@ -5,7 +5,7 @@ from torch import nn
 from torch.distributions import Categorical
 
 class Actor(nn.Module):
-    '''PPO Actor Module'''
+    '''PPO Actor Module.'''
 
     def __init__(self, statesize: int, n_actions: int, epochs: int, 
             batch_size: int = 64, eps: float = 0.2, c_ent: float = 0.0, lr: float = 0.0003):
@@ -38,7 +38,7 @@ class Actor(nn.Module):
     def forward(self, state: np.array) -> Tensor:
         '''Compute logits for a given game state.'''
         if not isinstance(state, Tensor): state = th.as_tensor(state, dtype=th.float32)
-        if not state.shape[-1] == self.ss_size: state = th.flatten(state, start_dim=-2)
+        if not state.shape[-1] == self.ssize: state = th.flatten(state, start_dim=-2)
         logits = self.action_net(self.policy_net(state))
         return logits
 
