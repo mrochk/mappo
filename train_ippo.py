@@ -8,15 +8,17 @@ if __name__ == '__main__':
 
     ### uncomment to load pretrained model:
 
-    #from stable_baselines3 import PPO
-    #loaded = PPO.load('pretrained.zip')
-    #for critic in algo.critics:
-        #algo.critics[critic].value_net_in.load_state_dict(loaded.policy.mlp_extractor.value_net.state_dict())
-        #algo.critics[critic].value_net_out.load_state_dict(loaded.policy.value_net.state_dict())
-    #for actor in algo.actors:
-        #algo.actors[actor].policy_net.load_state_dict(loaded.policy.mlp_extractor.policy_net.state_dict())
-        #algo.actors[actor].action_net.load_state_dict(loaded.policy.action_net.state_dict())
-    #del loaded
+    '''
+    from stable_baselines3 import PPO
+    loaded = PPO.load('pretrained.zip')
+    for critic in algo.critics:
+        algo.critics[critic].value_net_in.load_state_dict(loaded.policy.mlp_extractor.value_net.state_dict())
+        algo.critics[critic].value_net_out.load_state_dict(loaded.policy.value_net.state_dict())
+    for actor in algo.actors:
+        algo.actors[actor].policy_net.load_state_dict(loaded.policy.mlp_extractor.policy_net.state_dict())
+        algo.actors[actor].action_net.load_state_dict(loaded.policy.action_net.state_dict())
+    del loaded
+    '''
 
     print(algo)
     algo.learn(

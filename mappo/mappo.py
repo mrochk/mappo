@@ -15,7 +15,7 @@ class MAPPO(Algorithm):
 
     def __init__(self, env: AECEnv, batch_size: int = 64, epochs: int = 10, eps: float = 0.2, c_ent: float = 0):
         super().__init__(env, batch_size, epochs, eps, c_ent)
-        self.centralized_critic = CentralizedCritic(self.ssize, batch_size, 20)
+        self.centralized_critic = CentralizedCritic(self.ssize, batch_size, epochs)
 
     def flatten_trajectories(self, trajectories: dict):
         flattened = {}

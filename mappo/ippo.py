@@ -18,8 +18,9 @@ class IPPO(Algorithm):
 
         self.critics = nn.ModuleDict({
             agent: DecentralizedCritic(
-                state_space_size=self.ssize,
+                statesize=self.ssize,
                 batch_size=batch_size,
+                epochs=epochs,
             )
             for agent in env.agents
         })

@@ -23,7 +23,6 @@ class Algorithm(nn.Module, abc.ABC):
 
         env.reset()
         self.env = env
-
         self.ssize = np.prod(env.observation_space(env.agents[0]).shape)
 
         self.actors = nn.ModuleDict({
