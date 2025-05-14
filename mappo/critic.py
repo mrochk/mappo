@@ -1,3 +1,5 @@
+'''Contains code for base class Critc and Centralized and Decentralized implementations.'''
+
 import abc
 import torch as th
 from torch import Tensor

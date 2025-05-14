@@ -1,10 +1,9 @@
-import abc
 import numpy as np
 import torch as th
 from torch import Tensor
 from torch import nn
 from pettingzoo import AECEnv
-import os
+import abc, os
 
 from .actor import Actor
 
@@ -160,7 +159,7 @@ class Algorithm(nn.Module, abc.ABC):
 
     @abc.abstractmethod
     def add_gae(self, trajectories, gamma=0.99, lam=0.95):
-        '''Add GAEs'''
+        '''Add Generalized Advantage Estimations to collected trajectories.'''
         pass
 
     @abc.abstractmethod
