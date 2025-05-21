@@ -21,8 +21,10 @@ if __name__ == '__main__':
     '''
 
     print(algo)
+
+    print('\nStarting to train MAPPO algorithm...')
+
     algo.learn(
         niters=10, 
         nsteps=8192,
     )
-

@@ -82,7 +82,7 @@ class MAPPO(Algorithm):
         }
 
     def add_gae(self, trajectories: dict, gamma, lam):
-        '''Add GAEs using every critic.'''
+        '''Add GAEs using centralized critic.'''
         return self.centralized_critic.add_gae(trajectories, gamma, lam)
 
     def update_critic(self, flattened: dict):
