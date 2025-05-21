@@ -1,11 +1,11 @@
 # MAPPO
-Two Multi-Agent Reinforcement Learning algorithms implmented in PyTorch and applied to the KAZ PettingZoo environment.
+Two Multi-Agent Reinforcement Learning algorithms implmented in PyTorch and applied on the KAZ PettingZoo environment.
 
 Reference: https://arxiv.org/abs/2103.01955
 
-Note: `pretrained.zip` contains the code for an agent trained on the single-agent version of KAZ, it is possible to initialize the mulit-agent algorithms either from scratch, or using this pretained agent's weights.
+Note: `pretrained.zip` contains the code for an agent trained on the single-agent version of KAZ, it is possible to initialize the multi-agent algorithms either from scratch, or using this pretrained agent's weights.
 
-It is possible to show that MAPPO outperforms IPPO when intialized from scrtach, and IPPO converges faster when initialized with the pretrained weights.
+It is possible to show that MAPPO outperforms IPPO when intialized from scratch, and IPPO converges faster when initialized with the pretrained weights.
 
 This project implements two algorithms and compares them on the PettingZoo KAZ environment, which is a cooperation problem.
 
