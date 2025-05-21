@@ -1,5 +1,5 @@
 # MAPPO
-Two Multi-Agent Reinforcement Learning algorithms implmented in PyTorch and applied on the KAZ PettingZoo environment.
+Two Multi-Agent Reinforcement Learning algorithms implemented in PyTorch and applied on the KAZ PettingZoo environment.
 
 Reference: https://arxiv.org/abs/2103.01955
 
