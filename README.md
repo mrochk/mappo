@@ -3,6 +3,8 @@ Two Multi-Agent Reinforcement Learning algorithms implemented in PyTorch and app
 
 Reference: https://arxiv.org/abs/2103.01955
 
+Environment: https://pettingzoo.farama.org/environments/butterfly/knights_archers_zombies/
+
 Note: `pretrained.zip` contains the code for an agent trained on the single-agent version of KAZ, it is possible to initialize the multi-agent algorithms either from scratch, or using this pretrained agent's weights.
 
 It is possible to show that MAPPO outperforms IPPO when intialized from scratch, and IPPO converges faster when initialized with the pretrained weights.
