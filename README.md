@@ -11,6 +11,10 @@ It is possible to show that MAPPO outperforms IPPO when intialized from scratch,
 
 This project implements two algorithms and compares them on the PettingZoo KAZ environment, which is a cooperation problem.
 
+## Usage:
+
+Use the `train_*.py` scripts to train either agent, and `visualize.py` to see them play the KAZ game.
+
 ## Independent Proximal Policy Optimization (IPPO)
 
 Each agent maintains its own actor and critic networks, and does not directly take into account the behavior of the other agent to take its own decisions.
