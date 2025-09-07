@@ -9,8 +9,7 @@ from .critic import CentralizedCritic
 class MAPPO(Algorithm):
     '''Multi Agent Proximal Policy Optimization
 
-    Centralized Training - Decentralized Execution Framework: 
-    1 Critic for N Actors
+    Centralized Training - Decentralized Execution Framework: 1 Critic for N Actors
     '''
 
     def __init__(self, env: AECEnv, batch_size: int = 64, epochs: int = 10, eps: float = 0.2, c_ent: float = 0):
